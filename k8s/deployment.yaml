@@ -18,6 +18,6 @@ spec:
           args:
             - -listen=:5678
             # BUILD: esta línea es la que cambia el script en cada corrida
-            - -text=build inicial
+            - -text=build ea6f3c
           ports:
             - containerPort: 5678
