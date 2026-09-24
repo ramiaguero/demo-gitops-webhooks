@@ -18,6 +18,6 @@ spec:
           args:
             - -listen=:5678
             # BUILD: esta línea es la que cambia el script en cada corrida
-            - -text=build ff1bb6
+            - -text=build 489a54
           ports:
             - containerPort: 5678
