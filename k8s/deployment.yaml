@@ -1,19 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: guestbook-ui
+  name: demo-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: guestbook-ui
+      app: demo-app
   template:
     metadata:
       labels:
-        app: guestbook-ui
+        app: demo-app
     spec:
       containers:
-        - name: guestbook-ui
-          image: gcr.io/google-samples/gb-frontend:v5
+        - name: demo-app
+          image: hashicorp/http-echo:1.0
+          args:
+            - -listen=:5678
+            # BUILD: esta línea es la que cambia el script en cada corrida
+            - -text=build inicial
           ports:
-            - containerPort: 80
+            - containerPort: 5678
